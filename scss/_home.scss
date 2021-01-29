@@ -1,0 +1,303 @@
+    //=========Welcome portion of the webpage=========
+
+    #welcome {
+        display: grid; //Separates the welcome portion from the menu sidebar portion.
+        grid-template-columns: 350px 1fr; //fr = fraction of the available space within the grid.
+        width: 100%; //Width from the assigned starting point of the grid all the way to the end of the window size of the browser.
+        height: 100vh; //The height is relative to 1% of the height of the viewport aka the browser window size.
+    }
+
+    //=========Restaurant Info portion of the webpage===============
+
+    #information {
+        display:grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 100vh;
+        .restaurant-image{
+            height: 100%;
+            overflow: hidden;
+            img{
+                width: 100%;
+                //max-height: 500px;
+                //object-fit: cover;
+                //object-position: 0 0;
+            }
+        }
+        .info{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 100px 50px;
+            flex-direction: column;
+        }
+        .paragraphs{
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-gap: 20px;
+            line-height: 1.5;
+            font-size: 1.2rem;
+            color: gray;
+            margin-bottom: 2rem;
+        }
+        .about-link{
+            font-size: 1.7rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color:black;
+            font-weight: 500;
+            span{
+                margin-right: 20px;
+                
+            }
+            .circle-right{
+                text-decoration: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                height:40px;
+                width:40px;
+                background: #a90329; /* Old browsers */
+                background: -moz-radial-gradient(center, ellipse cover, #a90329 0%, #8f0222 44%, #6d0019 100%); /* FF3.6-15 */
+                background: -webkit-radial-gradient(center, ellipse cover, #a90329 0%,#8f0222 44%,#6d0019 100%); /* Chrome10-25,Safari5.1-6 */
+                background: radial-gradient(ellipse at center, #a90329 0%,#8f0222 44%,#6d0019 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */;
+                .fa-chevron-right{
+                    color:white;
+                }
+            }
+        }
+        }
+
+
+    //=========Preview of the food within the webpage================
+
+    #food-preview{
+    background: #ced2d6;
+    padding: 100px;
+    display:flex; //Centers the button on the page
+    justify-content: center; //Centers the button on the page
+    align-items: center; //Centers the button on the page
+    flex-direction: column; //Centers the button on the page
+
+    .button-rounded{
+        background:#ed4852;
+        color:white;
+        display:inline-block;
+        padding: 15px;
+        border-radius: 30px;
+        margin-bottom: 200px;
+    }
+//========Setting food preview items from left to right===========    
+    .food-slider{
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+
+        .slide{
+            width: 20%;
+            position: relative;
+            height: 500px;
+            cursor: pointer;
+            &:hover {
+                .food-preview-background{
+                    background: rgba(187, 76, 11, 0.979);
+                    transform: translate3d(0, -40px, 0);
+                }
+                .content{
+                .food-title{
+                    color:white;
+                }
+                .food-description{
+                    color:white;
+                }
+            }
+            }
+            .food-preview-background{
+                background:white;
+                top: 0;
+                bottom: 0;
+                height: 100%;
+                width:100%;
+                z-index: 1;
+                position: absolute;
+                transition: all .3s ease-in-out;
+
+            }
+            .content{
+                position: absolute;
+                z-index:2;
+                padding: 20px;
+                width:100%;
+                display:flex;
+                flex-direction: column;
+                align-items: center;
+                transition: all .3s ease-in-out;
+                .food-title{
+                    font-size: 2rem;
+                    font-weight: 900;
+                    margin-bottom: 3rem;
+                    color: #ed4852;
+                    transition: all .3s ease-in-out;
+
+                }
+                .food-description{
+                    font-size: 0.8rem;
+                    font-weight: 400;
+                    line-height: 1.8;
+                    margin-bottom: 3rem;
+                    color: #7a8d99;
+                }
+            }
+            img {
+                width: 95%;
+                max-width: 200px;
+            }
+        }
+    }
+}
+    h2{
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    //=========Menu sidebar setup============
+        .welcome-menu {
+            background:rgb(43, 0, 0);
+            padding: 50px; //padding away from the farthest left side of the page.
+            position: relative;
+            .logo {
+                display:flex; //Centers the logo right below the "MENU" title.
+                justify-content: center; //Centers the logo right below the "MENU" title.
+                margin-bottom: 50px; //Space between the logo and the "MENU" title.
+            img {
+                max-width: 150px;
+            }
+            }
+        }
+
+    //========Menu sidebar styling===========
+            .menu {
+                margin-bottom:50px;
+                .menu-title{
+                    text-transform: uppercase; //uppercases all first letters for each word in the .menu-title class
+                    color:#8a1212; //text color
+                    font-weight: 700; //bolding the text to a certain thickness.
+                    font-size: 1.2rem; //font size is relative to font-size of the root element (.menu)
+                    border-bottom: 2px solid #e2eaef; //Border beneath the Menu Title
+                    padding-bottom: 20px; //space between the gray border (#e2eaef) and the Menu Title (#0971ce)
+                    margin-bottom: 20px; //space between the border and the links
+                }
+    //========Stylzing the links within the menu sidebar===============
+                .links{
+                    li{
+                        a{
+                            font-size: 1.1rem; //increasing the regularly configured font size
+                            color: white; //text color
+                            font-weight: 700; //bolding the text to a certain thickness
+                            text-decoration: none; //removes underlines, strike-throughs, etc.
+                            margin-bottom: 1.8rem; //Space between the <li> elements
+                            display: block; //Takes up as much horizontal space as the elements can. <div>, <section>, <ul>, <h1>, and <p> will mostly use this.
+                            transition: color .3s ease-in-out; //<li> text elements will change to the assigned color (red in this case) and will remain red after being hovered for .3 seconds
+                            &:hover {
+                                color: red;
+                            }
+                        }
+                    }
+                }
+            }
+    //========Stylizing the social media links==============
+            .social-icons {
+                display: flex; //Centers the social media icons
+                a{
+                display: flex; //Centers the links within the social media icons
+                justify-content: center; //Vertically centers the icons within the border
+                align-items: center; //Horizontally centers the icons within the border
+                background: grey;
+                font-size: .9rem; //Font size is relative to the font size of .social-icons
+                text-decoration: none; //Removes underline,strike-thru, etc. from the text
+                color: white; //Icon color
+                height: 30px;
+                width: 30px;
+                border-radius: 50%; //Perfect circle for the borders
+                margin-right: 10px; //Space between the social media icons on the page
+                &:hover {
+                    color: lightblue;
+                }
+                }
+            }
+    //========Moves the address and phone number to the bottom of the page=======    
+            .location{
+                align-self: center;
+                position: absolute;
+                bottom: 30px;
+            .address{
+                color:rgb(180, 180, 180);
+                margin-bottom: 20px;
+                line-height: 1.8;
+            }
+            .phone-number {
+                a{
+                color: #8a1212;
+                font-size: 2rem;
+                font-weight: 700;
+                text-decoration: none;
+                }
+            }
+            }
+        
+
+
+    //=========Showcasing the food with gradient colors to make it popout========
+        .welcome-jumbo {
+            max-width: calc(100vw - 350px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; //Makes the <h1> appear center and above the image
+            background: #a90329; /* Old browsers */
+        background: -moz-radial-gradient(center, ellipse cover, #a90329 0%, #8f0222 44%, #6d0019 100%); /* FF3.6-15 */
+        background: -webkit-radial-gradient(center, ellipse cover, #a90329 0%,#8f0222 44%,#6d0019 100%); /* Chrome10-25,Safari5.1-6 */
+        background: radial-gradient(ellipse at center, #a90329 0%,#8f0222 44%,#6d0019 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            overflow: hidden;
+            padding: 100px;
+
+    //=========Styling the "NEW" promo item============
+            .status {
+                display: inline-block;
+                padding: 10px 20px;
+                font-size: 0.9rem;
+                font-weight: 700;
+                color: white;
+                background: black;
+                border-radius: 5px;
+                align-self: flex-start; 
+                margin-bottom: 20px;
+            }
+            h1{
+                font-size: 4rem;
+                font-weight: 900;
+                align-self: flex-start;
+                color: white;
+                margin-bottom: 100px;
+            }
+            .chicken{
+                max-width: 1000px;
+                width: 100%;
+                animation: moveUpandDown 6s linear infinite;
+                position: relative;
+            }
+
+    //===========Food item animation====================
+            @keyframes moveUpandDown {
+                0%, 100%{
+                    bottom:0;
+                }
+                50%{
+                    bottom:50px;
+                }
+            }
+        }
